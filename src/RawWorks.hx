@@ -13,8 +13,10 @@ class RawWorks {
 	var isWidgetBtnVisible = true;
 
 	public static var RAWWORKS_WIDGET_ID = 'rawworks-widget';
+
 	public static var RAWWORKS_WIDGET_URL = 'https://rawgpt.azurewebsites.net/';
 
+	// public static var RAWWORKS_WIDGET_URL = 'rawgpt.html';
 	// public static var RAWWORKS_WIDGET_ID = 'root'; // 'rawworks-widget';
 
 	public function new() {
@@ -37,7 +39,9 @@ class RawWorks {
 			widgetBtn = document.createDivElement();
 			widgetBtn.className = 'foobar';
 			widgetBtn.id = 'rawworks-widget-btn';
-			widgetBtn.innerHTML = '<img src="${RAWWORKS_WIDGET_URL}img/widget.svg" height="40px" width="233px" alt="Book a space" title="Book a space">';
+			// widgetBtn.innerHTML = '<img src="${RAWWORKS_WIDGET_URL}img/widget.svg" height="40px" width="233px" alt="Book a space" title="Book a space">';
+			// widgetBtn.innerHTML = '<img src="${RAWWORKS_WIDGET_URL}img/rawworks_widget.svg" alt="Ask me anything" title="Ask me anything">';
+			widgetBtn.innerHTML = '<img src="img/rawworks_widget.svg" height="100px" width="100px" alt="Ask me anything" title="Ask me anything">';
 			widgetBtn.onclick = onclickHandler;
 			document.body.appendChild(widgetBtn);
 		} else {

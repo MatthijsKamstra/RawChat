@@ -13,13 +13,13 @@ class RawWorks {
 	}
 	setupWidget() {
 		let style = window.document.createElement("style");
-		style.textContent = "#rawworks-widget-contentblocker {\n  z-index: 999999;\n  position: absolute;\n  height: 100%;\n  top: 0;\n  left: 0;\n  right: 0;\n  background: rgba(0, 0, 0, 0.5);\n  display: block;\n  opacity: 1;\n  transition: all 1s linear;\n}\n#rawworks-widget-contentblocker.hidden {\n  display: none;\n}\n#rawworks-widget-contentblocker.visuallyhidden {\n  opacity: 0;\n}\n#rawworks-widget-contentblocker.show {\n  opacity: 1;\n}\n#rawworks-widget-btn {\n  display: block;\n  position: absolute;\n  right: 2%;\n  bottom: 10%;\n  height: 40px;\n  width: 233px;\n  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.3);\n  border-radius: 20px 0 0 0;\n  background-color: #ffffff;\n  cursor: pointer;\n}\n#rawworks-widget-btn.left {\n  left: 2%;\n}\n#rawworks-widget-react {\n  background-color: silver;\n  width: 100%;\n  height: 100%;\n}\n#rawworks-widget {\n  z-index: 1000000;\n  margin: 0;\n  padding: 0;\n  display: block;\n  position: absolute;\n  right: 2%;\n  bottom: 10%;\n  height: 620px;\n  width: 410px;\n  border-radius: 20px 0 0 0;\n  background-color: #ffffff;\n  box-shadow: 0 7px 21px 0 rgba(0, 0, 0, 0.2);\n  text-align: center;\n  overflow: hidden;\n  transition: width 0.5s;\n}\n#rawworks-widget iframe {\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n}\n#rawworks-widget.close {\n  display: none;\n}\n#rawworks-widget.resize {\n  width: 500px;\n}\n";
+		style.textContent = "#rawworks-widget-contentblocker {\n  z-index: 999999;\n  position: absolute;\n  height: 100%;\n  top: 0;\n  left: 0;\n  right: 0;\n  background: rgba(0, 0, 0, 0.5);\n  display: block;\n  opacity: 1;\n  transition: all 1s linear;\n}\n#rawworks-widget-contentblocker.hidden {\n  display: none;\n}\n#rawworks-widget-contentblocker.visuallyhidden {\n  opacity: 0;\n}\n#rawworks-widget-contentblocker.show {\n  opacity: 1;\n}\n#rawworks-widget-btn {\n  display: block;\n  position: absolute;\n  right: 2%;\n  bottom: 10%;\n  box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.3);\n  border-radius: 20px 0 0 0;\n  background-color: #ffffff;\n  cursor: pointer;\n}\n#rawworks-widget-btn.left {\n  left: 2%;\n}\n#rawworks-widget-react {\n  background-color: silver;\n  width: 100%;\n  height: 100%;\n}\n#rawworks-widget {\n  z-index: 1000000;\n  margin: 0;\n  padding: 0;\n  display: block;\n  position: absolute;\n  right: 2%;\n  bottom: 10%;\n  height: 620px;\n  width: 410px;\n  border-radius: 20px 0 0 0;\n  background-color: #ffffff;\n  box-shadow: 0 7px 21px 0 rgba(0, 0, 0, 0.2);\n  text-align: center;\n  overflow: hidden;\n  transition: width 0.5s;\n}\n#rawworks-widget iframe {\n  width: 100%;\n  height: 100%;\n  overflow: hidden;\n}\n#rawworks-widget.close {\n  display: none;\n}\n#rawworks-widget.resize {\n  width: 500px;\n}\n";
 		window.document.head.appendChild(style);
 		if(window.document.getElementById("rawworks-widget-btn") == null) {
 			this.widgetBtn = window.document.createElement("div");
 			this.widgetBtn.className = "foobar";
 			this.widgetBtn.id = "rawworks-widget-btn";
-			this.widgetBtn.innerHTML = "<img src=\"" + RawWorks.RAWWORKS_WIDGET_URL + "img/widget.svg\" height=\"40px\" width=\"233px\" alt=\"Book a space\" title=\"Book a space\">";
+			this.widgetBtn.innerHTML = "<img src=\"img/rawworks_widget.svg\" height=\"100px\" width=\"100px\" alt=\"Ask me anything\" title=\"Ask me anything\">";
 			this.widgetBtn.onclick = $bind(this,this.onclickHandler);
 			window.document.body.appendChild(this.widgetBtn);
 		} else {
@@ -51,14 +51,14 @@ class RawWorks {
 	toggleContentBlocker() {
 		let _gthis = this;
 		if(this.widgetContainer.classList.contains("close")) {
-			console.log("src/RawWorks.hx:80:","hide blocker");
+			console.log("src/RawWorks.hx:84:","hide blocker");
 			this.contentBlocker.classList.add("visuallyhidden");
 			window.setTimeout(function() {
 				_gthis.contentBlocker.classList.add("hidden");
 				_gthis.contentBlocker.classList.remove("visuallyhidden");
 			},1100);
 		} else {
-			console.log("src/RawWorks.hx:88:","show blocker");
+			console.log("src/RawWorks.hx:92:","show blocker");
 			this.contentBlocker.classList.remove("hidden");
 			this.contentBlocker.classList.remove("visuallyhidden");
 		}
@@ -71,11 +71,11 @@ class RawWorks {
 		this.widgetContainer.classList.toggle("resize");
 	}
 	static closeWidget() {
-		console.log("src/RawWorks.hx:106:","static closeWidget");
+		console.log("src/RawWorks.hx:110:","static closeWidget");
 		window.document.getElementById(RawWorks.RAWWORKS_WIDGET_ID).classList.toggle("close");
 	}
 	static resizeWidget() {
-		console.log("src/RawWorks.hx:114:","static resizeWidget");
+		console.log("src/RawWorks.hx:118:","static resizeWidget");
 		window.document.getElementById(RawWorks.RAWWORKS_WIDGET_ID).classList.toggle("resize");
 	}
 	static inject() {
