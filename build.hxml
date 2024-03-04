@@ -1,0 +1,33 @@
+-cp src
+-D analyzer-optimize
+-main RawWorks
+-D js-es=6
+-js docs/js/rawworks.js
+
+
+# #  --class-path _haxe
+# --dce full
+# -main rawworkstest
+# -D js-es=6
+# -js ../_docs/js/rawworks.js
+
+
+# # --next
+
+
+# --class-path src
+# --dce full
+# -main Rawworks
+# --resource rawworks.css@styling
+# -D js-es=6
+# -js ../public/js/rawworks.js
+
+# --next
+
+
+# # --class-path _haxe
+# --dce full
+# -main CreateJson
+# -python bin/main.py
+# -cmd cd bin/
+# -cmd python3 main.py

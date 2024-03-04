@@ -1,0 +1,23 @@
+#rawworks-widget-contentblocker {
+    z-index: ($z-index - 1);
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+
+    display: block;
+    opacity: 1;
+    transition: all 1s linear;
+
+    &.hidden {
+        display: none;
+    }
+    &.visuallyhidden {
+        opacity: 0;
+    }
+    &.show {
+        opacity: 1;
+    }
+}

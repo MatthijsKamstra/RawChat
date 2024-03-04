@@ -1,0 +1,83 @@
+//
+//	MIXINS & FUNCTIONS
+//	A few simple Sass helpers.
+//
+
+// @font-face mixin
+// Order of the includes matters, and it is: normal, bold, italic, bold+italic.
+// Forked from Bourbon. https://github.com/thoughtbot/bourbon/
+@mixin font-face-bourbon($font-family, $file-path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    src: url("#{$file-path}.eot");
+    src: url("#{$file-path}.eot?#iefix") format("embedded-opentype"), url("#{$file-path}.woff") format("woff"),
+      url("#{$file-path}.ttf") format("truetype"), url("#{$file-path}.svg##{$font-family}") format("svg");
+  }
+}
+@mixin font-face($font-family, $file-path) {
+  @font-face {
+    font-family: $font-family;
+    src: url("#{$file-path}.eot");
+    src: url("#{$file-path}.eot?#iefix") format("embedded-opentype"), url("#{$file-path}.woff2") format("woff2"),
+      url("#{$file-path}.woff") format("woff");
+  }
+}
+
+// font
+
+// A map of font-weights.
+$dosis-families: (
+  regular: 400,
+  medium: 500,
+  semibold: 600,
+);
+$palanquin-families: (
+  regular: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+);
+@mixin dosis($dosis-weight) {
+  // If the family exists in the map.
+  @if map-has-key($dosis-families, $dosis-weight) {
+    // Get the family value.
+    $dosis-weight-value: map-get($dosis-families, $dosis-weight);
+
+    // Write css:
+    font-family: $heading-font-family;
+    font-weight: $dosis-weight-value;
+    font-style: normal;
+
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    // Log a warning.
+    @warn 'Invalid dosis-family: #{$dosis-weight}.';
+  }
+}
+@mixin palanquin($palanquin-weight) {
+  // If the family exists in the map.
+  @if map-has-key($palanquin-families, $palanquin-weight) {
+    // Get the family value.
+    $palanquin-weight-value: map-get($palanquin-families, $palanquin-weight);
+
+    // Write css:
+    font-family: $body-font-family;
+    font-weight: $palanquin-weight-value;
+    font-style: normal;
+
+    font-smooth: always;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    // If the breakpoint doesn't exist in the map.
+  } @else {
+    // Log a warning.
+    @warn 'Invalid palanquin-family: #{$palanquin-weight}.';
+  }
+}

@@ -1,0 +1,23 @@
+// DEFAULT OPTIONS
+
+// max size cumulus container
+$breakpoint-xxl: 1920px;
+$max-width: $breakpoint-xxl;
+
+// defaults
+$default-padding: 15px;
+$default-container-padding: 150px;
+$container-padding-mountain-curve: 250px;
+
+// Durations
+$fastDuration: 0.1s !default;
+$mediumDuration: 0.3s !default;
+$slowDuration: 0.5s !default;
+$slowerDuration: 1s !default;
+
+// Nav sizes
+$navHeight: 103px;
+
+//
+
+$z-index: 1000000;

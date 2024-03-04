@@ -1,0 +1,15 @@
+// File: main.scss
+
+// abstracts
+// @import "abstracts/debug";
+@import "abstracts/variables";
+@import "abstracts/mixins";
+@import "abstracts/media-queries";
+
+// components / modules
+@import "components/content-blocker";
+@import "components/widget-btn";
+@import "components/widget";
+
+// pages
+// @import "pages/landingpage";

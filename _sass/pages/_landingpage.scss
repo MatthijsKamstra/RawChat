@@ -1,0 +1,26 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+body {
+    background-image: url("../img/zoku/iphone.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100%;
+    @include respond-above(sm) {
+        background-image: url("../img/zoku/ipad_landscape.png");
+    }
+    @include respond-above(md) {
+        background-image: url("../img/zoku/ipad_portait.png");
+    }
+    @include respond-above(lg) {
+        background-image: url("../img/zoku/desktop.jpg");
+    }
+    @include respond-above(xl) {
+        background-image: url("../img/zoku/desktop.jpg");
+    }
+    @include respond-above(xxl) {
+        background-image: url("../img/zoku/desktop_huge.png");
+    }
+}

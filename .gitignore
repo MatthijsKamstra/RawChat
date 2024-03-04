@@ -1,0 +1,10 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# old files
+_package.json
+docs/index_iframe.html
+docs/index_react.html
+README_old.md

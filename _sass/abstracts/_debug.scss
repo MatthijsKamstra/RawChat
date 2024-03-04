@@ -1,0 +1,19 @@
+/*
+This might help to figure out why some div are acting unpredictable
+*/
+
+%warning {
+  background-image: url(assets/img/dummy/warning.jpg);
+}
+
+/*
+Even simplere version to test, generated pattern from: http://www.patternify.com/
+
+how to use (add to element that is unpredictable)
+```
+    @extend %warningzig;
+```
+*/
+%warningzig {
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAAKklEQVQYlWNgQAPTpk37jy6GAWCK8CpGl8SqGJcJKOKE3ESUm8lSTDQAAAntG4t0Q3ktAAAAAElFTkSuQmCC);
+}
